@@ -3,6 +3,7 @@ import 'package:blinkit_ui/data/grid_item_data.dart';
 import 'package:blinkit_ui/screens/home/Widgets/custom_grid_item.dart' show CustomGridItem;
 import 'package:blinkit_ui/screens/home/Widgets/gridHeader.dart' show GridHeader;
 import 'package:flutter/material.dart';
+import 'package:blinkit_ui/core/Routing/app_router.dart';
 
 class GridTitle extends StatelessWidget {
   final ScrollController controller;
@@ -26,6 +27,13 @@ class GridTitle extends StatelessWidget {
                 image2: item.image2,
                 title: item.title,
                 moreText: item.moreText,
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    RoutePath.detail,
+                    arguments: item,
+                  );
+                },
               );
             }, childCount: gridItemsList.length),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -49,6 +57,13 @@ class GridTitle extends StatelessWidget {
                 image2: item.image2,
                 title: item.title,
                 moreText: item.moreText,
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    RoutePath.detail,
+                    arguments: item,
+                  );
+                },
               );
             }, childCount: gridItemsList.length),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

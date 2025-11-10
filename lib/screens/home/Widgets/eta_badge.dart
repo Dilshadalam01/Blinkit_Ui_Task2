@@ -11,7 +11,6 @@ class EtaBadge extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //FIRST ROW
           Row(
             children: [
               Text(
@@ -94,7 +93,6 @@ class EtaBadge extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 0),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [

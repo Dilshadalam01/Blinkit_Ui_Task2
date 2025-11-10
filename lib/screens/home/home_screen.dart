@@ -37,7 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ActionItem(icon: Icons.apps_rounded, label: 'Categories'),
                 ActionItem(icon: Icons.print_outlined, label: 'Print'),
               ],
-              onChanged: (i) {},
+              onChanged: (i) {
+
+              },
             ),
           ),
         ],
