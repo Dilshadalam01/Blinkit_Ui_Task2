@@ -20,23 +20,6 @@ class CategoryItem extends StatelessWidget {
       onTap: onTap,
       child: Column(
         children: [
-          //Rounded Image
-          // Container(
-          //   width: 70,
-          //   height: 70,
-          //   decoration: BoxDecoration(
-          //     borderRadius: BorderRadius.circular(40),
-          //     color: isSelected ? Colors.green[100] : Colors.grey[200],
-          //     image: DecorationImage(
-          //       image: NetworkImage(imagePath),
-          //       fit: BoxFit.cover,
-          //     ),
-          //     border: Border.all(
-          //       color: isSelected ? Colors.green : Colors.transparent,
-          //       width: 2,
-          //     ),
-          //   ),
-          // ),
           Stack(
             children: [
               Container(
@@ -76,7 +59,6 @@ class CategoryItem extends StatelessWidget {
                 ),
             ],
           ),
-
 
           const SizedBox(height: 6),
 

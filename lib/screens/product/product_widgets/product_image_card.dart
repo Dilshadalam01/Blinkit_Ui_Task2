@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:blinkit_ui/screens/product/product_widgets/product_style.dart';
-
+import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-
   final String imageUrl;
   final String metaText;
   final String title;
@@ -34,27 +32,36 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: ProductCardStyles.cardBg,
+        color: Colors.transparent,
         borderRadius: ProductCardStyles.cardRadius,
-        boxShadow: ProductCardStyles.softShadow,
       ),
-      padding: const EdgeInsets.all(10),
+
+      padding: EdgeInsets.all(5),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
+
         children: [
           Stack(
             children: [
               ClipRRect(
                 borderRadius: ProductCardStyles.imageRadius,
-                child: AspectRatio(
-                  aspectRatio: 3,
-                  child: Image.network(
-                    imageUrl,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => Container(
-                      color: Colors.grey[200],
-                      alignment: Alignment.center,
-                      child: const Icon(Icons.broken_image, color: Colors.grey),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 180,
+                  child: ClipRRect(
+                    borderRadius: ProductCardStyles.imageRadius,
+                    child: Image.network(
+                      imageUrl,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => Container(
+                        color: Colors.grey[200],
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.broken_image,
+                          color: Colors.grey,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -73,19 +80,25 @@ class ProductCard extends StatelessWidget {
                       color: Colors.black26,
                       shape: BoxShape.circle,
                     ),
-                    child: const Icon(Icons.favorite_border, size: 14, color: Colors.white),
+                    child: const Icon(
+                      Icons.favorite_border,
+                      size: 14,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
 
-
               Positioned(
-                right: 8,
-                bottom: 8,
+                right: 5,
+                bottom: 5,
                 child: GestureDetector(
                   onTap: onAdd,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 14,
+                      vertical: 6,
+                    ),
                     decoration: BoxDecoration(
                       color: ProductCardStyles.brandGreen,
                       borderRadius: BorderRadius.circular(8),
@@ -99,11 +112,28 @@ class ProductCard extends StatelessWidget {
 
           const SizedBox(height: ProductCardStyles.gapM),
 
-          Text(metaText, style: ProductCardStyles.meta),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Text(
+              metaText,
+              style: ProductCardStyles.meta,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
 
           const SizedBox(height: ProductCardStyles.gapXS),
 
-          Text(title, style: ProductCardStyles.title, maxLines: 2),
+          Text(
+            title,
+            style: ProductCardStyles.title,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
 
           if (lowStockText != null) ...[
             const SizedBox(height: ProductCardStyles.gapXS),
@@ -114,16 +144,19 @@ class ProductCard extends StatelessWidget {
 
           Row(
             children: [
-              Icon(Icons.access_time_rounded, size: 14, color: Colors.amber[800]),
+              Icon(
+                Icons.access_time_rounded,
+                size: 14,
+                color: Colors.amber[800],
+              ),
               const SizedBox(width: 4),
               Text(timeText, style: ProductCardStyles.time),
               const Spacer(),
-              if (offerText != null) Text(offerText!, style: ProductCardStyles.offer),
+              if (offerText != null)
+                Text(offerText!, style: ProductCardStyles.offer),
             ],
           ),
-
           const SizedBox(height: ProductCardStyles.gapS),
-
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

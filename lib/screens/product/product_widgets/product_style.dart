@@ -22,9 +22,9 @@ class ProductCardStyles {
   // Shadows (subtle)
   static List<BoxShadow> softShadow = const [
     BoxShadow(
-      color: Colors.black12,
-      blurRadius: 10,
-      offset: Offset(0, 4),
+      color: Colors.white,
+      blurRadius: 5,
+      offset: Offset(0, 1),
     ),
   ];
 

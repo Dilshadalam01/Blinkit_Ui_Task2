@@ -1,8 +1,8 @@
 import 'package:blinkit_ui/core/styles.dart';
 import 'package:blinkit_ui/data/grid_item_data.dart';
-import 'package:blinkit_ui/screens/product/product_widgets/product_category_list.dart';
+import 'package:blinkit_ui/data/product_gridview_data.dart'
+    show ProductGridviewData;
 import 'package:blinkit_ui/screens/product/product_widgets/product_divider_line.dart';
-import 'package:blinkit_ui/screens/product/product_widgets/product_image_card.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -65,30 +65,7 @@ class ProductDetails extends StatelessWidget {
           child: ThinDivider(),
         ),
       ),
-      body: Row(
-        children: [
-          const CategoryList(),
-          Expanded(
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height,
-              width: double.infinity,
-              child: Card(
-                child: ProductCard(
-                  title: 'title',
-                  imageUrl: 'img url',
-                  metaText: 'metatext',
-                  timeText: '12 min',
-                  offerText: '22% off',
-                  lowStockText: '33',
-                  mrp: 22,
-                  price: 23,
-                ),
-              ),
-
-            ),
-          ),
-        ],
-      ),
+      body: Row(children: [const Expanded(child: ProductGridviewData())]),
     );
   }
 }
