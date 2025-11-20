@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ProductCardStyles {
   // Colors
-  static const Color pageBg = Color(0xFFF3E4D5); // similar to screenshot
+  static const Color pageBg = Color(0xFFF3E4D5);
   static const Color cardBg = Colors.white;
   static const Color brandGreen = Color(0xFF22C55E);
   static const Color brandBlue = Color(0xFF1565C0);

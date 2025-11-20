@@ -78,7 +78,6 @@ final List<GridItemData> gridItemsList = [
 ];
 
 // 2nd Grid Item data
-
 final List<GridItemData2> gridItemsList2 = [
   GridItemData2(
     image2:

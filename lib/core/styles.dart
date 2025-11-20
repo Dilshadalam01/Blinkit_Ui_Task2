@@ -31,6 +31,7 @@ class AppSpacing {
   static const vertical = EdgeInsets.symmetric(vertical: 16);
 }
 
+
 /*Gridview Style */
 
 
@@ -75,7 +76,7 @@ class BoxDecorations {
   );
 }
 
-/*Grid header style */
+// Grid header style
 class GridHeaderStyles {
   static const TextStyle headerTextStyle = TextStyle(
     fontSize: 25,
