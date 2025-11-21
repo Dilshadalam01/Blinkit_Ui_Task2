@@ -14,6 +14,9 @@ class ProductCard extends StatelessWidget {
   final VoidCallback? onAdd;
   final VoidCallback? onFav;
   final VoidCallback? onTap;
+  final double? height;
+  final double? leftPadding;
+  final double? rightPadding;
 
   const ProductCard({
     super.key,
@@ -28,6 +31,9 @@ class ProductCard extends StatelessWidget {
     this.onAdd,
     this.onFav,
     this.onTap,
+    this.height,
+    this.leftPadding,
+    this.rightPadding,
   });
 
   @override
@@ -39,7 +45,7 @@ class ProductCard extends StatelessWidget {
           color: Colors.transparent,
           borderRadius: ProductCardStyles.cardRadius,
         ),
-        padding: EdgeInsets.all(5),
+        padding: EdgeInsets.only(left: leftPadding ?? 5, right: rightPadding ?? 5),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +56,7 @@ class ProductCard extends StatelessWidget {
                   borderRadius: ProductCardStyles.imageRadius,
                   child: SizedBox(
                     width: double.infinity,
-                    height: 180,
+                    height: height??180,
                     child: ClipRRect(
                       borderRadius: ProductCardStyles.imageRadius,
                       child: Image.network(
@@ -132,9 +138,11 @@ class ProductCard extends StatelessWidget {
 
             Text(
               title,
+
               style: ProductCardStyles.title,
-              maxLines: 2,
+              maxLines: 1,
               overflow: TextOverflow.ellipsis,
+              softWrap: true,
             ),
 
             if (lowStockText != null) ...[

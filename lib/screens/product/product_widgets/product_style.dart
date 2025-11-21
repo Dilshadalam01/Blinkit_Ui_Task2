@@ -61,9 +61,10 @@ class ProductCardStyles {
   );
 
   static const TextStyle mrp = TextStyle(
-    fontSize: 13,
-    color: textSecondary,
+    fontSize: 15,
+    color: textPrimary,
     decoration: TextDecoration.lineThrough,
+    decorationColor: Colors.black,
   );
 
   static const TextStyle lowStock = TextStyle(
