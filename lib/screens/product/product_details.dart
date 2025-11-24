@@ -17,7 +17,7 @@ class ProductDetails extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: true,
         centerTitle: false,
-        titleSpacing: 0,
+        titleSpacing: 1,
         toolbarHeight: 64,
         title: Padding(
           padding: const EdgeInsets.only(bottom: 0, top: 4),
@@ -52,6 +52,11 @@ class ProductDetails extends StatelessWidget {
                       WidgetSpan(
                         alignment: PlaceholderAlignment.middle,
                         child: Icon(Icons.keyboard_arrow_down, size: 18),
+                      ),
+                      WidgetSpan(child: SizedBox(width: 25)),
+                      WidgetSpan(
+                          alignment: PlaceholderAlignment.bottom,
+                          child: Icon(Icons.shopping_cart_sharp, size: 25)
                       ),
                     ],
                   ),

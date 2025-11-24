@@ -5,6 +5,7 @@ import 'package:blinkit_ui/screens/product/product_widgets/product_image_card.da
 import 'package:flutter/material.dart';
 import 'package:blinkit_ui/core/styles.dart' show GridHeaderStyles;
 import 'package:blinkit_ui/screens/product/product_main_view_page/product_recommendation_single_view.dart';
+import 'package:blinkit_ui/screens/product/product_widgets/product_cart.dart';
 
 class ProductSingleView extends StatelessWidget {
   final int index;
@@ -78,7 +79,13 @@ class ProductSingleView extends StatelessWidget {
             GridHeader(text: 'Top Products in the category'),
             SizedBox(height: 10),
             ProductRecommendationSingleView(key: key),
-
+            ProductAddCart(
+              weight: '100 g',
+              mrp: 'MRP ₹66',
+              price: 22,
+              offText: '23% OFF',
+              tax: 'inclusive of all tax',
+            ),
           ],
         ),
       ),

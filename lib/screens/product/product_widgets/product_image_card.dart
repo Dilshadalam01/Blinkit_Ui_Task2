@@ -138,13 +138,11 @@ class ProductCard extends StatelessWidget {
 
             Text(
               title,
-
               style: ProductCardStyles.title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               softWrap: true,
             ),
-
             if (lowStockText != null) ...[
               const SizedBox(height: ProductCardStyles.gapXS),
               Text(lowStockText!, style: ProductCardStyles.lowStock),

@@ -31,7 +31,6 @@ class ProductRecommendationSingleView extends StatelessWidget {
                   height: 160,
                   leftPadding: 20,
                 ),
-
               );
             },
           ),

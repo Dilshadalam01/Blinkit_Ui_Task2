@@ -79,4 +79,10 @@ class ProductCardStyles {
     color: Colors.white,
     letterSpacing: .3,
   );
+
+  static const TextStyle addToCartStyle  = TextStyle(
+    backgroundColor: Colors.green,
+    height: 20,
+    color: Colors.white,
+  );
 }
